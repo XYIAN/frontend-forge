@@ -4,12 +4,14 @@ import { useState } from "react";
 import { Sidebar } from "primereact/sidebar";
 import { Button } from "primereact/button";
 import Link from "next/link";
+import { NavLink } from "../common";
+import { NAV_MENU } from "@/constants/NAV_MENU";
 
 export function NavBar() {
   const [visible, setVisible] = useState(false);
 
   return (
-    <header className="w-full px-4 py-3 flex align-items-center justify-content-between">
+    <header className="surface-ground px-4 py-3 flex align-items-center justify-content-between shadow-2">
       {/* Logo */}
       <Link href="/" className="text-xl font-bold">
         Frontend Forge
@@ -24,48 +26,27 @@ export function NavBar() {
 
       {/* Sidebar (Mobile Navigation) */}
       <Sidebar visible={visible} onHide={() => setVisible(false)} position="right">
-        <nav className="flex flex-column gap-4 p-4">
-          <Link href="/" className="text-lg hover:text-blue-500" onClick={() => setVisible(false)}>
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="text-lg hover:text-blue-500"
-            onClick={() => setVisible(false)}
-          >
-            About
-          </Link>
-          <Link
-            href="/projects"
-            className="text-lg hover:text-blue-500"
-            onClick={() => setVisible(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/contact"
-            className="text-lg hover:text-blue-500"
-            onClick={() => setVisible(false)}
-          >
-            Contact
-          </Link>
+        <nav className="flex flex-column gap-3 p-4">
+          {NAV_MENU.map((item) => (
+            <NavLink
+              label={item.label}
+              key={`link_to_${item.label}_mobile`}
+              route={item.route}
+              onClick={() => setVisible(false)}
+            />
+          ))}
         </nav>
       </Sidebar>
 
       {/* Full Navbar (Shown on Larger Screens) */}
-      <nav className="hidden lg:flex gap-6">
-        <Link href="/" className="hover:text-gray-300">
-          Home
-        </Link>
-        <Link href="/about" className="hover:text-gray-300">
-          About
-        </Link>
-        <Link href="/projects" className="hover:text-gray-300">
-          Projects
-        </Link>
-        <Link href="/contact" className="hover:text-gray-300">
-          Contact
-        </Link>
+      <nav className="hidden lg:flex gap-4">
+        <NavLink route="/" label="Home" />
+        <NavLink route="/about" label="About" />
+        <NavLink route="/projects" label="Projects" />
+        <NavLink route="/contact" label="Contact" />
+        {NAV_MENU.map((item) => (
+          <NavLink label={item.label} key={`link_to_${item.label}_desktop`} route={item.route} />
+        ))}
       </nav>
     </header>
   );
