@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
-// import '@/styles/globals.css';
-import '../styles/globals.scss'
+import { PageLayout } from "@/components";
 import { Providers } from "providers/Providers";
+import '../styles/globals.scss'
+import 'primereact/resources/themes/lara-dark-teal/theme.css';//prime react prebuilt theme
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers><PageLayout>{children}</PageLayout></Providers>
       </body>
     </html>
   );
