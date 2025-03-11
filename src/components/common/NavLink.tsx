@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // ? Centralized class names to avoid duplication
-const NAV_LINK_CLASS = "text-lg text-primary hover:text-primary-600";
+const NAV_LINK_CLASS = "text-lg text-primary hover:text-primary-600 nav-link";
 
 // ? Reusable component for navigation links
 export const NavLink = ({

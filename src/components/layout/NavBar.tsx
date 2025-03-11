@@ -25,7 +25,13 @@ export function NavBar() {
       />
 
       {/* Sidebar (Mobile Navigation) */}
-      <Sidebar visible={visible} onHide={() => setVisible(false)} position="right">
+      <Sidebar
+        visible={visible}
+        onHide={() => setVisible(false)}
+        position="right"
+        className="sidebar-container"
+        //dismissable
+      >
         <nav className="flex flex-column gap-3 p-4">
           {NAV_MENU.map((item) => (
             <NavLink
@@ -40,10 +46,6 @@ export function NavBar() {
 
       {/* Full Navbar (Shown on Larger Screens) */}
       <nav className="hidden lg:flex gap-4">
-        <NavLink route="/" label="Home" />
-        <NavLink route="/about" label="About" />
-        <NavLink route="/projects" label="Projects" />
-        <NavLink route="/contact" label="Contact" />
         {NAV_MENU.map((item) => (
           <NavLink label={item.label} key={`link_to_${item.label}_desktop`} route={item.route} />
         ))}
