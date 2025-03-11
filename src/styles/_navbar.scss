@@ -95,3 +95,22 @@
   -webkit-backdrop-filter: blur(3px); /* Safari support */
   transition: background 0.3s ease-in-out;
 }
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Prevents wrapping */
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #00ffff, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+}
