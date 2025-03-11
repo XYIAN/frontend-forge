@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import { NavBar } from "./NavBar";
+import Background from "./Background";
 interface PageLayoutProps {
   children: ReactNode;
 }
@@ -12,6 +13,7 @@ export function PageLayout({ children }: PageLayoutProps) {
       {/* Header (To Be Created Later) */}
       <NavBar />
       {/* background parallax */}
+      <Background />
       <main className="flex-grow">{children}</main>
       {/* Footer (To Be Created Later) */}
     </div>
