@@ -12,7 +12,7 @@ export function NavBar() {
   const [visible, setVisible] = useState(false);
 
   return (
-    <header className="surface-ground px-4 py-3 flex align-items-center justify-content-between shadow-2">
+    <header className="surface-ground px-4 py-3 flex align-items-center justify-content-between shadow-2 sticky-header">
       {/* Logo */}
       <Link href="/" className="text-xl font-bold">
         Frontend Forge

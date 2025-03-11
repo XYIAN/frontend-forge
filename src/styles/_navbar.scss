@@ -84,3 +84,14 @@
     transition: background-color 0.2s ease-in-out;
   }
 }
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3) !important; /* Semi-transparent black */
+  backdrop-filter: blur(3px); /* Blurs content behind */
+  -webkit-backdrop-filter: blur(3px); /* Safari support */
+  transition: background 0.3s ease-in-out;
+}
