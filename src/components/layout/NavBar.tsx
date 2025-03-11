@@ -6,6 +6,7 @@ import { Button } from "primereact/button";
 import Link from "next/link";
 import { NavLink } from "../common";
 import { NAV_MENU } from "@/constants/NAV_MENU";
+// import { Panel } from "primereact/panel";
 
 export function NavBar() {
   const [visible, setVisible] = useState(false);
@@ -30,9 +31,11 @@ export function NavBar() {
         onHide={() => setVisible(false)}
         position="right"
         className="sidebar-container"
+        header="Kyle's Frontend Forge"
         //dismissable
       >
-        <nav className="flex flex-column gap-3 p-4">
+        {/* <Panel header="Navigation" toggleable> */}
+        <nav className="flex flex-column gap-3 p-4 nav-container">
           {NAV_MENU.map((item) => (
             <NavLink
               label={item.label}
@@ -42,6 +45,7 @@ export function NavBar() {
             />
           ))}
         </nav>
+        {/* </Panel> */}
       </Sidebar>
 
       {/* Full Navbar (Shown on Larger Screens) */}
