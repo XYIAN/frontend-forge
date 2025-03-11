@@ -11,6 +11,7 @@ export function PageLayout({ children }: PageLayoutProps) {
     <div className="min-h-screen flex flex-column">
       {/* Header (To Be Created Later) */}
       <NavBar />
+      {/* background parallax */}
       <main className="flex-grow">{children}</main>
       {/* Footer (To Be Created Later) */}
     </div>

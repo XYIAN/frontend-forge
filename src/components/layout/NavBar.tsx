@@ -6,6 +6,7 @@ import { Button } from "primereact/button";
 import Link from "next/link";
 import { NavLink } from "../common";
 import { NAV_MENU } from "@/constants/NAV_MENU";
+import { SmLinkPrimary } from "../socialMediaLinks";
 
 export function NavBar() {
   const [visible, setVisible] = useState(false);
@@ -29,7 +30,7 @@ export function NavBar() {
         visible={visible}
         onHide={() => setVisible(false)}
         position="right"
-        className="sidebar-container"
+        className="sidebar-container relative"
         //dismissable
       >
         <nav className="flex flex-column gap-3 p-4">
@@ -42,6 +43,8 @@ export function NavBar() {
             />
           ))}
         </nav>
+        {/* Social Icons */}
+        <SmLinkPrimary />
       </Sidebar>
 
       {/* Full Navbar (Shown on Larger Screens) */}
