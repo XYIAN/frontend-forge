@@ -34,7 +34,7 @@ This is just the beginning! As the **Frontend Forge** evolves, expect new animat
 <div align="center">
   <strong>Connect with me</strong>  
   <br>
-  <a href="https://github.com/yourusername">GitHub</a> | <a href="https://linkedin.com/in/yourname">LinkedIn</a>  
+  <a href="https://linkedin.com/in/kxdilbeck">LinkedIn</a> | <a href="https://kyledilbeck.com/booking">Booking & Availability</a> | <a href="https://github.com/xyian">GitHub</a>  
   <br><br>
-  🔥 <strong>Let the forging begin!</strong> 🔥
+  🔥 <strong>Let the component forging begin!</strong> 🔥
 </div>
