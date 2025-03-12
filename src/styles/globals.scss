@@ -1,6 +1,9 @@
 /* Partials */
 @use "./navbar";
 @use "./backgroundParallax";
+@use "./displayItems";
+@use "./smLinkPrimary";
+
 /* PrimeReact Theme (Choose one) */
 @import "primereact/resources/themes/lara-dark-teal/theme.css"; //prime react prebuilt theme
 
@@ -16,7 +19,7 @@
 /* Custom global styles (if needed) */
 html,
 body {
-  height: 100%;
+  //height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
