@@ -1,0 +1,79 @@
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  }
+}
+
+.spellbook-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.spellbook {
+  width: 90%;
+  max-width: 400px;
+  height: 250px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  position: relative;
+}
+
+.spellbook-page {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #222, #111);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spellbook-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffff;
+  animation: glow 2s infinite alternate;
+}
+
+.spellbook-content {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10px;
+}
+
+.spellbook-controls {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.spellbook-btn {
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #00ffff;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.spellbook-btn:hover {
+  transform: scale(1.1);
+}

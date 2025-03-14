@@ -4,8 +4,8 @@ import { Button } from "primereact/button";
 import "@/styles/home.scss";
 
 const DETAILS = {
-  title: "Welcome to Kyle's Frontend Forge",
-  description: "Crafting sleek, modern, and high-performance web experiences.",
+  title: "The Forge",
+  description: "Steel is shaped by flame. Code is shaped by The Forge.",
 };
 
 export default function Home() {
