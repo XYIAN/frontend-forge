@@ -5,26 +5,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
 import { Button } from "primereact/button";
 import "@/styles/_spellbook.scss";
-
-const pages = [
-  { title: "🔥 The Magic Scroll", content: "A seamless, parallax scroll experience." },
-  { title: "✨ The Arcane Tooltip", content: "Hover to reveal hidden messages." },
-  { title: "🧙‍♂️ The Wizard’s Button", content: "A glowing button with interactive effects." },
-  { title: "📜 The Enchanted Form", content: "A form with smooth animations & magical UI." },
-];
+import { SHOWCASE_LIST } from "@/constants";
 
 export const Spellbook = () => {
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(1); // 1 = right, -1 = left
-
   const nextPage = () => {
     setDirection(1); // Flip right
-    setPage((prev) => (prev + 1) % pages.length);
+    setPage((prev) => (prev + 1) % SHOWCASE_LIST.length);
   };
 
   const prevPage = () => {
     setDirection(-1); // Flip left
-    setPage((prev) => (prev - 1 + pages.length) % pages.length);
+    setPage((prev) => (prev - 1 + SHOWCASE_LIST.length) % SHOWCASE_LIST.length);
   };
 
   const handlers = useSwipeable({
@@ -57,8 +50,8 @@ export const Spellbook = () => {
           >
             <div className="sparkling-bg" />
             <div className="page-content">
-              <h2 className="spellbook-title">{pages[page].title}</h2>
-              <p className="spellbook-content">{pages[page].content}</p>
+              <h2 className="spellbook-title">{SHOWCASE_LIST[page].title}</h2>
+              <p className="spellbook-content">{SHOWCASE_LIST[page].description}</p>
             </div>
           </motion.div>
         </AnimatePresence>
