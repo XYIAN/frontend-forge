@@ -1,0 +1,40 @@
+.showcase-container {
+  width: 90%;
+  max-width: 500px;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  text-align: center;
+  margin: 2rem auto;
+  opacity: 0.9;
+}
+
+.showcase-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.showcase-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.showcase-content {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgba(0, 255, 255, 0.7);
+}

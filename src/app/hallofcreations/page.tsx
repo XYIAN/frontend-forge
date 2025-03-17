@@ -1,4 +1,5 @@
 import { Spellbook, MagicScroll } from "@/features";
+import { WizardButton } from "@/features/hallOfCreations/WizardButton";
 import "@/styles/_spellbook.scss";
 export const HallOfCreations = () => {
   return (
@@ -9,6 +10,7 @@ export const HallOfCreations = () => {
       {/* The Spellbook Interactive Section */}
       <Spellbook />
       <MagicScroll />
+      <WizardButton />
     </div>
   );
 };
