@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
 import { Button } from "primereact/button";
@@ -10,6 +10,17 @@ import { SHOWCASE_LIST } from "@/constants";
 export const Spellbook = () => {
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(1); // 1 = right, -1 = left
+
+  // Auto-flip logic with randomized interval
+  useEffect(() => {
+    const randomInterval = Math.floor(Math.random() * (15000 - 5000) + 5000); // Random 5-15s
+    const flipTimeout = setTimeout(() => {
+      nextPage();
+    }, randomInterval);
+
+    return () => clearTimeout(flipTimeout); // Cleanup on unmount or page change
+  }, [page]);
+
   const nextPage = () => {
     setDirection(1); // Flip right
     setPage((prev) => (prev + 1) % SHOWCASE_LIST.length);
