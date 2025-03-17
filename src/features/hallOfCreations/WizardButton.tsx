@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "primereact/button";
 import "@/styles/_wizardButton.scss";
 
 export const WizardButton = () => {
@@ -10,15 +9,29 @@ export const WizardButton = () => {
 
   return (
     <motion.div
-      className="wizard-button-container"
+      className="wizard-button-wrapper"
       whileTap={{ scale: 0.95 }}
       onClick={() => setIsClicked(!isClicked)}
     >
-      <Button
-        label={isClicked ? "? Spell Activated!" : "?? Cast a Spell"}
-        className="wizard-button"
-      />
-      <div className="glow-effect" />
+      <motion.button
+        className={`wizard-button ${isClicked ? "activated" : ""}`}
+        whileHover={{ scale: 1.05 }}
+      >
+        <span className="button-text">{isClicked ? "✨ Spell Activated!" : "🪄 Cast Spell"}</span>
+
+        {/* Sparkles */}
+        <div className="sparkles">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="sparkle" />
+          ))}
+        </div>
+
+        {/* Magic Shine */}
+        <div className="magic-shine" />
+
+        {/* Centered Click Glow */}
+        <div className="click-glow" />
+      </motion.button>
     </motion.div>
   );
 };

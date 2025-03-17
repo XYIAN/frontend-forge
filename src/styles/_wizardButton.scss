@@ -1,44 +1,192 @@
-.wizard-button-container {
+.wizard-button-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 100%;
-  max-width: 250px;
-  margin: 2rem auto;
+  margin-top: 2rem;
 }
 
 .wizard-button {
-  background: linear-gradient(135deg, #00ffff, #0077ff);
-  border: none;
-  color: #000;
-  font-size: 1.2rem;
-  font-weight: bold;
+  position: relative;
   padding: 1rem 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
   border-radius: 50px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  background: linear-gradient(135deg, #002244, #005577);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
   transition: all 0.3s ease-in-out;
 }
 
+/* Magic Glow */
 .wizard-button:hover {
-  background: linear-gradient(135deg, #0077ff, #00ffff);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+  background: linear-gradient(135deg, #003366, #0077aa);
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
+  transform: scale(1.05);
 }
 
-.glow-effect {
+.wizard-button:active {
+  transform: scale(0.95);
+}
+
+/* Centered Click Glow */
+.click-glow {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.5) 10%, transparent 80%);
+  border-radius: 50%; /* ✅ Ensures it stays round */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.activated .click-glow {
+  opacity: 1;
+  animation: click-pulse 0.6s ease-in-out;
+}
+
+@keyframes click-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Sparkles */
+.sparkles {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 50px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-  animation: glow 1.5s infinite alternate;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-@keyframes glow {
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+  animation: sparkle-animation 3s infinite;
+  opacity: 0;
+}
+
+/* Increase Sparkle Rate When Activated */
+.activated .sparkle {
+  animation: sparkle-animation 1s infinite; /* ✅ Doubles sparkle speed */
+}
+
+/* Generate multiple sparkles in different positions */
+.sparkle:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+.sparkle:nth-child(2) {
+  top: 30%;
+  left: 80%;
+  animation-delay: 0.3s;
+}
+.sparkle:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 0.6s;
+}
+.sparkle:nth-child(4) {
+  top: 70%;
+  left: 30%;
+  animation-delay: 0.9s;
+}
+.sparkle:nth-child(5) {
+  top: 85%;
+  left: 70%;
+  animation-delay: 1.2s;
+}
+.sparkle:nth-child(6) {
+  top: 95%;
+  left: 10%;
+  animation-delay: 1.5s;
+}
+
+/* Sparkle animation */
+@keyframes sparkle-animation {
   0% {
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    opacity: 0;
+    transform: scale(0.8) translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-5px);
   }
   100% {
-    box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+    opacity: 0;
+    transform: scale(0.8) translateY(-10px);
+  }
+}
+
+/* Magic Shine Effect */
+.magic-shine {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+  opacity: 0.3;
+  animation: shine-pulse 3s infinite alternate;
+}
+
+@keyframes shine-pulse {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+/* Magic Activation Effect */
+.activated {
+  background: linear-gradient(135deg, #0077ff, #00ffff);
+  box-shadow: 0px 0px 30px rgba(0, 255, 255, 1);
+  animation: activate-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes activate-glow {
+  0% {
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 35px rgba(0, 255, 255, 1);
+  }
+}
+
+/* Text Glow on Activation */
+.activated .button-text {
+  animation: text-glow 1.5s infinite alternate;
+}
+
+@keyframes text-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(0, 255, 255, 1);
   }
 }
