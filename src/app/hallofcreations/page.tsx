@@ -1,4 +1,4 @@
-import { Spellbook } from "@/features";
+import { Spellbook, MagicScroll } from "@/features";
 import "@/styles/_spellbook.scss";
 export const HallOfCreations = () => {
   return (
@@ -8,6 +8,7 @@ export const HallOfCreations = () => {
 
       {/* The Spellbook Interactive Section */}
       <Spellbook />
+      <MagicScroll />
     </div>
   );
 };
