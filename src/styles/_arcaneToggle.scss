@@ -1,0 +1,120 @@
+.arcane-toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Subtle Screen Shake */
+.shake {
+  animation: shake-effect 0.3s ease-in-out;
+}
+
+@keyframes shake-effect {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Title */
+.toggle-title {
+  font-size: 1.8rem;
+  text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Toggle Wrapper */
+.arcane-toggle-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Glowing Aura Effect */
+.toggle-aura {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
+  transform: scale(0.8);
+}
+
+/* Spark Burst Effect */
+.toggle-sparkles {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, rgba(0, 255, 255, 0) 80%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-out;
+  transform: scale(0);
+}
+
+/* Toggle ON */
+.arcane-toggle-wrapper.active .toggle-aura {
+  opacity: 1;
+  transform: scale(1.1);
+  animation: pulse-glow 1.5s infinite alternate;
+}
+
+/* Spark Effect on Toggle */
+.arcane-toggle-wrapper.active .toggle-sparkles {
+  opacity: 1;
+  transform: scale(1.5);
+  animation: fade-out 0.5s ease-out forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Magic Pulse Animation */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+  }
+}
+
+/* Status Text */
+.toggle-status {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #ffffff;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.8);
+  transition: color 0.5s ease-in-out;
+}
+
+/* Change Status Text Color When Active */
+.arcane-toggle-wrapper.active + .toggle-status {
+  color: #00ffff;
+}

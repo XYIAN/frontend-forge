@@ -5,6 +5,10 @@ import {
   ArcaneTooltip,
   ShadowDropdown,
   PhantomModal,
+  SpellbindingSlider,
+  ArcaneToggle,
+  GlowingInput,
+  // ForgedNavbar,
 } from "@/features";
 import { WizardButton } from "@/features/hallOfCreations/WizardButton";
 import "@/styles/_spellbook.scss";
@@ -22,6 +26,10 @@ export const HallOfCreations = () => {
       <ArcaneTooltip />
       <ShadowDropdown />
       <PhantomModal />
+      <SpellbindingSlider />
+      <ArcaneToggle />
+      {/* <ForgedNavbar /> */}
+      <GlowingInput />
     </div>
   );
 };
