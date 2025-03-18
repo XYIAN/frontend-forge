@@ -9,3 +9,4 @@ export * from "./SpellbindingSlider";
 export * from "./ArcaneToggle";
 export * from "./ForgedNavbar";
 export * from "./GlowingInput";
+export * from "./ElementalTabs";

@@ -8,6 +8,7 @@ import {
   SpellbindingSlider,
   ArcaneToggle,
   GlowingInput,
+  ElementalTabs,
   // ForgedNavbar,
 } from "@/features";
 import { WizardButton } from "@/features/hallOfCreations/WizardButton";
@@ -30,6 +31,7 @@ export const HallOfCreations = () => {
       <ArcaneToggle />
       {/* <ForgedNavbar /> */}
       <GlowingInput />
+      <ElementalTabs />
     </div>
   );
 };
