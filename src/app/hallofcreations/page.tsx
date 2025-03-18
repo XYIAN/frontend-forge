@@ -1,4 +1,11 @@
-import { Spellbook, MagicScroll } from "@/features";
+import {
+  Spellbook,
+  MagicScroll,
+  MysticCard,
+  ArcaneTooltip,
+  ShadowDropdown,
+  PhantomModal,
+} from "@/features";
 import { WizardButton } from "@/features/hallOfCreations/WizardButton";
 import "@/styles/_spellbook.scss";
 export const HallOfCreations = () => {
@@ -11,6 +18,10 @@ export const HallOfCreations = () => {
       <Spellbook />
       <MagicScroll />
       <WizardButton />
+      <MysticCard />
+      <ArcaneTooltip />
+      <ShadowDropdown />
+      <PhantomModal />
     </div>
   );
 };

@@ -1,0 +1,44 @@
+.shadow-dropdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Default Style */
+.shadow-dropdown {
+  width: 250px;
+  background: #121212;
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  color: #00ffff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* When Open (Dark Purple/Pink Glow) */
+.shadow-dropdown.open {
+  border-color: rgba(180, 0, 255, 0.8);
+  box-shadow: 0px 4px 25px rgba(180, 0, 255, 0.7);
+  background: linear-gradient(135deg, #250033, #590066);
+}
+
+/* When an Option is Selected (Cyan Glow) */
+.shadow-dropdown.selected {
+  border-color: rgba(0, 255, 255, 1);
+  box-shadow: 0px 4px 20px rgba(0, 255, 255, 0.8);
+  background: linear-gradient(135deg, #002244, #005577);
+  color: #ffffff;
+}
+
+/* Dropdown Menu Styling */
+.p-dropdown-panel {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(180, 0, 255, 0.7);
+  box-shadow: 0px 4px 15px rgba(180, 0, 255, 0.7);
+}
+
+/* Hover Effects on Options */
+.p-dropdown-item:hover {
+  background: rgba(180, 0, 255, 0.2) !important;
+  color: #ffffff !important;
+}

@@ -1,0 +1,45 @@
+.arcane-tooltip-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Button Styling */
+.arcane-trigger {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #222244, #0055aa);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover/Tap Effects */
+.arcane-trigger:hover,
+.arcane-trigger:focus {
+  background: linear-gradient(135deg, #003366, #0099ff);
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
+}
+
+/* Tooltip Magic Effect */
+.p-tooltip {
+  animation: tooltip-glow 1s ease-in-out infinite alternate;
+  background: rgba(0, 0, 0, 0.85);
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+
+/* Glowing Tooltip Animation */
+@keyframes tooltip-glow {
+  0% {
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 1);
+  }
+}
