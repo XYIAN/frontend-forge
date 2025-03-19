@@ -1,0 +1,71 @@
+.spellbinding-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Slider Title */
+.slider-title {
+  font-size: 1.8rem;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
+  transition: color 0.5s ease-in-out; /* Smooth color transition */
+}
+
+/* Magic Slider */
+.spellbinding-slider {
+  width: 90%;
+  max-width: 500px;
+  height: 12px; /* Increased thickness */
+  background: transparent;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Track Styling */
+.p-slider .p-slider-bar {
+  transition: background 0.5s ease-in-out;
+  height: 12px; /* Increased thickness */
+}
+
+/* Slider Range (The Filled Portion) */
+.p-slider-range {
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Handle Styling */
+.p-slider-handle {
+  background: #ffffff;
+  border: 3px solid #00ffff;
+  width: 24px; /* Larger handle */
+  height: 24px; /* Larger handle */
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Magical Handle Effect - Centered */
+.p-slider-handle::before {
+  content: "✨"; /* Magical sparkle effect */
+  font-size: 14px;
+  color: #ff00ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Power Level Text */
+.slider-value {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.8);
+  transition: color 0.5s ease-in-out;
+}

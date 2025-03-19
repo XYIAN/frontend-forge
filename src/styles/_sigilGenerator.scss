@@ -1,0 +1,49 @@
+.sigil-generator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  min-height: 100vh; /* Ensure proper centering */
+  scroll-margin-top: 20vh; /* Helps with smooth scrolling */
+}
+
+/* Glowing Sigil Canvas */
+.sigil-canvas {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  animation: sigil-glow 3s infinite alternate ease-in-out;
+}
+
+/* Sigil Glow Animation */
+@keyframes sigil-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+  }
+}
+
+/* Summon Button */
+.sigil-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  background: rgba(0, 153, 255, 0.75); /* Darker hue with 75% opacity */
+  color: white;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.7);
+}
+
+.sigil-button:hover {
+  background: rgba(0, 153, 255, 0.9); /* Slightly brighter on hover */
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
+  transform: scale(1.05);
+}

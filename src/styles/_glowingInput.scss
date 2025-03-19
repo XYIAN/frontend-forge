@@ -1,0 +1,49 @@
+.glowing-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure full viewport height for scrolling */
+  width: 100%;
+}
+
+/* Input Field */
+.glowing-input {
+  width: 90%;
+  max-width: 350px;
+  padding: 12px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Glowing Effect on Focus */
+.glowing-input:focus {
+  box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+}
+/* Toast Customization */
+.p-toast .p-toast-message.spell-toast {
+  background: rgba(255, 0, 255, 0.5) !important; /* 50% opacity pink */
+  color: white !important;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  animation: spell-fade-in 0.5s ease-in-out;
+}
+
+/* Toast Fade-in Effect */
+@keyframes spell-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,73 @@
+.magic-scroll-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0.7) 100%);
+  overflow: hidden;
+  border-top: 2px solid rgba(0, 255, 255, 0.4); // Subtle glowing border at top
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%; // ? Ensures the icon container spans the full width
+  display: flex;
+  align-items: center;
+  justify-content: center; // ? Centers the icon horizontally
+  font-size: 3rem;
+  color: #00ffff;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.8)); // ? Adds brightness
+  animation: bounce 1.5s infinite alternate;
+}
+
+.scroll-icon {
+  display: block; // ? Ensures no unexpected inline spacing issues
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.scroll-content {
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.scroll-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: glow 3s infinite alternate;
+}
+
+.scroll-description {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 25px rgba(0, 255, 255, 1);
+  }
+}
+
+/* Scroll to Top Button */
+.scroll-top-button {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: #00ffff !important;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5) !important;
+}

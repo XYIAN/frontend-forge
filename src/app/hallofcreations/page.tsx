@@ -1,4 +1,23 @@
-import { Spellbook } from "@/features";
+import {
+  Spellbook,
+  MagicScroll,
+  MysticCard,
+  ArcaneTooltip,
+  ShadowDropdown,
+  PhantomModal,
+  SpellbindingSlider,
+  ArcaneToggle,
+  GlowingInput,
+  ElementalTabs,
+  SigilGenerator,
+  TimePortal,
+  MysteryBox,
+  WizardDice,
+  RuneTimeline,
+  DimensionalFooter,
+  // ForgedNavbar,
+} from "@/features";
+import { WizardButton } from "@/features/hallOfCreations/WizardButton";
 import "@/styles/_spellbook.scss";
 export const HallOfCreations = () => {
   return (
@@ -8,6 +27,23 @@ export const HallOfCreations = () => {
 
       {/* The Spellbook Interactive Section */}
       <Spellbook />
+      <MagicScroll />
+      <WizardButton />
+      <MysticCard />
+      <ArcaneTooltip />
+      <ShadowDropdown />
+      <PhantomModal />
+      <SpellbindingSlider />
+      <ArcaneToggle />
+      {/* <ForgedNavbar /> */}
+      <GlowingInput />
+      <ElementalTabs />
+      <SigilGenerator />
+      <TimePortal />
+      <MysteryBox />
+      <WizardDice />
+      <RuneTimeline />
+      <DimensionalFooter />
     </div>
   );
 };
