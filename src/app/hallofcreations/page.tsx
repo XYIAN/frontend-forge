@@ -11,6 +11,7 @@ import {
   ElementalTabs,
   SigilGenerator,
   TimePortal,
+  MysteryBox,
   // ForgedNavbar,
 } from "@/features";
 import { WizardButton } from "@/features/hallOfCreations/WizardButton";
@@ -36,6 +37,7 @@ export const HallOfCreations = () => {
       <ElementalTabs />
       <SigilGenerator />
       <TimePortal />
+      <MysteryBox />
     </div>
   );
 };

@@ -1,0 +1,157 @@
+.mystery-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensures proper centering */
+  scroll-margin-top: 20vh; /* Smooth scrolling */
+  position: relative;
+}
+
+/* The Mystery Box */
+.mystery-box {
+  width: 75vw;
+  max-width: 450px;
+  height: 25vh;
+  background: linear-gradient(135deg, #222, #111);
+  border: 2px solid #00ffff;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: floating 3s infinite alternate ease-in-out;
+}
+
+/* Question Mark on Closed Box */
+.mystery-box::before {
+  content: "?";
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(0, 255, 255, 0.7);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 1);
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Hide Question Mark When Open */
+.mystery-box.opened::before {
+  opacity: 0;
+}
+
+/* Sparkles Animation on Opened Box */
+.mystery-box.opened {
+  background: linear-gradient(135deg, #222, #111);
+  position: relative;
+}
+
+.mystery-box.opened::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 2%, transparent 10%),
+    radial-gradient(circle, rgba(0, 255, 255, 0.7) 2%, transparent 10%);
+  background-size: 20px 20px;
+  animation: sparkle-animation 1.5s infinite alternate ease-in-out;
+}
+
+/* Glow Animation */
+.mystery-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Box Lid Animation */
+.mystery-lid {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(135deg, #333, #111);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  top: -10px;
+  transform-origin: top;
+}
+
+/* Button Styling */
+.mystery-button {
+  position: absolute;
+  bottom: -50px;
+  background: #00ffff;
+  color: #111;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+.mystery-button:hover {
+  background: #0099ff;
+  box-shadow: 0px 0px 20px rgba(0, 153, 255, 1);
+  transform: scale(1.05);
+}
+
+/* Mystery Message */
+.mystery-message {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+  text-align: center;
+}
+
+/* Floating Animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+/* Sparkle Effect Animation */
+@keyframes sparkle-animation {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Reset Button - Positioned Below the Box */
+.mystery-reset {
+  margin-top: 50px;
+  padding: 10px 20px;
+  background: rgba(255, 0, 255, 0.5); /* Semi-transparent pink */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.7);
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mystery-reset:hover {
+  background: rgba(255, 0, 255, 0.8);
+  box-shadow: 0px 0px 25px rgba(255, 0, 255, 1);
+  transform: scale(1.1);
+}

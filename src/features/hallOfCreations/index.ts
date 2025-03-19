@@ -12,3 +12,4 @@ export * from "./GlowingInput";
 export * from "./ElementalTabs";
 export * from "./SigilGenerator";
 export * from "./TimePortal";
+export * from "./MysteryBox";
