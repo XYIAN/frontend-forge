@@ -12,6 +12,9 @@ import {
   SigilGenerator,
   TimePortal,
   MysteryBox,
+  WizardDice,
+  RuneTimeline,
+  DimensionalFooter,
   // ForgedNavbar,
 } from "@/features";
 import { WizardButton } from "@/features/hallOfCreations/WizardButton";
@@ -38,6 +41,9 @@ export const HallOfCreations = () => {
       <SigilGenerator />
       <TimePortal />
       <MysteryBox />
+      <WizardDice />
+      <RuneTimeline />
+      <DimensionalFooter />
     </div>
   );
 };

@@ -13,3 +13,6 @@ export * from "./ElementalTabs";
 export * from "./SigilGenerator";
 export * from "./TimePortal";
 export * from "./MysteryBox";
+export * from "./WizardDice";
+export * from "./RuneTimeline";
+export * from "./DimensionalFooter";
