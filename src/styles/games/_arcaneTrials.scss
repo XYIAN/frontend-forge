@@ -1,0 +1,216 @@
+.arcane-trials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 1s ease-in-out;
+
+  &.success {
+    background: radial-gradient(circle, rgba(0, 255, 153, 0.8), rgba(0, 0, 0, 0.2));
+  }
+
+  &.failure {
+    background: radial-gradient(circle, rgba(255, 68, 68, 0.8), rgba(0, 0, 0, 0.3));
+  }
+}
+
+/* Arcane Icons */
+.arcane-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Success Icon Effect */
+.icon-success {
+  color: #00ff99;
+  text-shadow: 0px 0px 15px rgba(0, 255, 153, 1);
+  animation: success-glow 2s infinite alternate ease-in-out;
+}
+
+@keyframes success-glow {
+  0% {
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 0px 0px 20px rgba(0, 255, 153, 0.8);
+  }
+  100% {
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 1), 0px 0px 30px rgba(0, 255, 153, 1);
+  }
+}
+
+/* Failure Icon Effect */
+.icon-failure {
+  color: #ff4444;
+  text-shadow: 0px 0px 15px rgba(255, 68, 68, 1);
+  animation: alarm-pulse 1s infinite alternate ease-in-out;
+}
+
+@keyframes alarm-pulse {
+  0% {
+    text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    text-shadow: 0px 0px 20px rgba(255, 0, 0, 1);
+  }
+}
+
+/* Animated Title */
+.arcane-title {
+  font-size: 2rem;
+  text-shadow: 0px 0px 12px rgba(80, 150, 255, 1);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  transition: color 0.5s ease-in-out;
+}
+
+/* Spellcasting Area */
+.spell-casting-area {
+  font-size: 1.4rem;
+  color: #ddd;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  background: rgba(15, 20, 45, 0.85);
+  min-width: 300px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 25px rgba(80, 150, 255, 0.5);
+}
+
+/* 🟢 Arcane Trials Button - Magical Style */
+.arcane-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #222, #111);
+  border: 2px solid #00ffff;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background: linear-gradient(135deg, #0099ff, #0066cc);
+    box-shadow: 0px 0px 25px rgba(0, 153, 255, 1);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.9);
+  }
+}
+
+/* 🔮 Glow & Sparkle Effects */
+.arcane-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.arcane-button:hover::before {
+  opacity: 1;
+  animation: sparkle-flicker 1s infinite alternate;
+}
+
+@keyframes sparkle-flicker {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* ✨ Floating Sparkles on Success */
+.spell-success-sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  .sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 0, 255, 0.5));
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle-rise 2s ease-in-out infinite;
+  }
+
+  .sparkle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0.2s;
+  }
+  .sparkle:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.4s;
+  }
+  .sparkle:nth-child(3) {
+    left: 50%;
+    animation-delay: 0.6s;
+  }
+  .sparkle:nth-child(4) {
+    left: 70%;
+    animation-delay: 0.8s;
+  }
+  .sparkle:nth-child(5) {
+    left: 90%;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes sparkle-rise {
+  0% {
+    opacity: 0.3;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateY(-120px);
+  }
+}
+
+/* 💨 Spell Failure Effects - Smoke */
+.spell-failure-smoke {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+  opacity: 0;
+  animation: failure-smoke 1.5s ease-in-out infinite;
+}
+
+@keyframes failure-smoke {
+  0% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
