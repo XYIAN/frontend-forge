@@ -1,0 +1,87 @@
+.arcane-gambit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.arcane-gambit-title {
+  font-size: 2rem;
+  text-shadow: 0px 0px 12px rgba(80, 150, 255, 1);
+  margin-bottom: 1rem;
+}
+
+.arcane-gambit-instructions {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+}
+
+/* Card Grid Layout */
+.arcane-card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Card Styles */
+.arcane-card {
+  width: 120px;
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+
+.arcane-card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Flip Effect */
+.arcane-card.flipped .arcane-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card Faces */
+.arcane-card-front,
+.arcane-card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Front of Card */
+.arcane-card-front {
+  background: linear-gradient(135deg, #222, #111);
+  border: 2px solid #00ffff;
+}
+
+/* Back of Card */
+.arcane-card-back {
+  background: linear-gradient(135deg, #551a8b, #220044);
+  transform: rotateY(180deg);
+  border: 2px solid #ff00ff;
+  box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+}
+
+/* Card Hover Effects */
+.arcane-card:hover {
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+}
