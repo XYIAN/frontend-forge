@@ -1,0 +1,73 @@
+@keyframes moltenFlow {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 48% 52%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes subtlePulse {
+  0% {
+    box-shadow: 0px 0px 20px rgba(255, 69, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0px 0px 40px rgba(255, 140, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0px 0px 20px rgba(255, 69, 0, 0.4);
+  }
+}
+
+.eternal-forge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  scroll-margin-top: 20vh;
+
+  .metal-frame {
+    max-width: 850px;
+    padding: 2.5rem;
+    background: linear-gradient(145deg, #222, #111);
+    border: 2px solid #ff4500;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(255, 69, 0, 0.5);
+    animation: subtlePulse 3s infinite alternate ease-in-out;
+    z-index: 2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #ff5733;
+    text-shadow: 0px 0px 10px rgba(255, 100, 0, 0.8);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #ddd;
+    line-height: 1.6;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  }
+
+  .molten-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #ff4500, #8b0000, #ff5733, #5a0000);
+    background-size: 300% 300%;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    animation: moltenFlow 6s infinite alternate ease-in-out;
+    left: 0;
+    top: 0;
+  }
+}

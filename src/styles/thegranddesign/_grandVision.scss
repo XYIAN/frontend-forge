@@ -1,0 +1,95 @@
+@keyframes cosmicPulse {
+  0% {
+    box-shadow: 0px 0px 15px rgba(80, 150, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0px 0px 40px rgba(120, 200, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0px 0px 15px rgba(80, 150, 255, 0.5);
+  }
+}
+
+@keyframes swirlingParticles {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-10px) rotate(8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+}
+
+.grand-vision {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  scroll-margin-top: 20vh;
+  background: radial-gradient(circle, #0a0a1a, #05051a); /* Deep space aesthetic */
+
+  .vision-frame {
+    max-width: 850px;
+    padding: 2.5rem;
+    background: rgba(15, 20, 45, 0.85);
+    border: 2px solid rgba(80, 150, 255, 0.5);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 25px rgba(80, 150, 255, 0.5);
+    animation: cosmicPulse 3s infinite alternate ease-in-out;
+    z-index: 2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #508cff;
+    text-shadow: 0px 0px 12px rgba(80, 150, 255, 1);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #ddd;
+    line-height: 1.6;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Floating particles */
+  .particle {
+    position: absolute;
+    font-size: 1.8rem;
+    color: rgba(80, 150, 255, 0.4);
+    text-shadow: 0px 0px 15px rgba(80, 150, 255, 0.6);
+    animation: swirlingParticles 6s infinite alternate ease-in-out;
+  }
+
+  .particle-1 {
+    top: 10%;
+    left: 18%;
+    animation-delay: 0.4s;
+  }
+  .particle-2 {
+    top: 50%;
+    right: 10%;
+    animation-delay: 0.8s;
+  }
+  .particle-3 {
+    bottom: 20%;
+    left: 35%;
+    animation-delay: 1.2s;
+  }
+  .particle-4 {
+    bottom: 5%;
+    right: 25%;
+    animation-delay: 1.6s;
+  }
+}

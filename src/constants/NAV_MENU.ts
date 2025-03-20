@@ -1,6 +1,6 @@
 export const NAV_MENU = [
   { route: "/", label: "Home" },
-  { route: "/about", label: "About" },
-  { route: "/projects", label: "Projects" },
-  { route: "/contact", label: "Contact" },
+  { route: "/thegranddesign", label: "The Grand Design" },
+  { route: "/hallofcreations", label: "Hall of Creations" },
+  { route: "/contact", label: "Summon The Wizard" },
 ];
