@@ -25,6 +25,8 @@ This project is powered by:
 - **Framer Motion** – For smooth and dynamic animations
 - **SCSS** – Custom styling with flexibility and efficiency
 
+---
+
 ## ✨ The Hall of Creations
 
 The **Hall of Creations** is an interactive showcase of handcrafted UI components, animations, and
@@ -56,6 +58,68 @@ effects designed to demonstrate frontend mastery.
 ⚡ **Final Touches**
 
 - **The Dimensional Footer** – A sleek, fading footer that blends seamlessly into the UI
+
+---
+
+## 🏆 The Arcane Trials
+
+**The Arcane Trials** is a standalone interactive page where users must cast spells using swipe
+gestures or button clicks. The game features randomized messages for both successful and failed
+spells, encouraging users to test their magical reflexes.
+
+### 🎮 **How to Play**
+
+- **Swipe left, right, up, or down** to cast a spell.
+- **Click the button** for a chance-based spell attempt.
+- **Randomized messages** keep the experience unique each time.
+- **Dynamic animations & sparkles** provide visual feedback for success and failure.
+
+### 🛠 **Tech Used**
+
+- Gesture detection with **react-swipeable**
+- Animations powered by **Framer Motion**
+- Dynamic message handling with **TypeScript**
+- Custom styles using **SCSS**
+
+---
+
+## 🏗 The Grand Design
+
+The **Grand Design** page serves as a deep dive into the philosophy and process behind the Frontend
+Forge. It showcases different thematic sections reflecting the **creation process**, **business
+aspects**, and **wizardry of UI development**.
+
+### 🔥 **Sections**
+
+- **The Birth of the Forge** – The origin story, featuring fiery animations and a scroll-like
+  background.
+- **The Eternal Forge** – The ongoing journey of refining and improving UI, with a molten steel
+  aesthetic.
+- **Arcane Mastery** – A showcase of the methodologies and best practices behind structuring
+  frontend applications.
+- **The Grand Vision** – A high-contrast, structured section reflecting the long-term goals and
+  expansion of the project.
+
+### 🛠 **Tech Used**
+
+- **Next.js Dynamic Pages**
+- **Framer Motion for Animated Transitions**
+- **SCSS for Thematic Styling**
+
+---
+
+## ✉️ The Contact Page
+
+The **Contact Page** is designed to be stylish and functional, allowing seamless interaction for
+those looking to connect.
+
+### 📅 **Features**
+
+- **Calendly Integration** – Schedule meetings directly within the page.
+- **Themed UI** – Styled to match the overall aesthetic of the project.
+- **Smooth Animations** – Ensuring a polished user experience.
+
+---
 
 ## 🛠️ Project Goals
 
