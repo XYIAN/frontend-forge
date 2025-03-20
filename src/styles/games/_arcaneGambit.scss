@@ -4,84 +4,206 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
   padding: 2rem;
+  text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
 }
 
-.arcane-gambit-title {
-  font-size: 2rem;
-  text-shadow: 0px 0px 12px rgba(80, 150, 255, 1);
-  margin-bottom: 1rem;
-}
-
-.arcane-gambit-instructions {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin-bottom: 2rem;
-}
-
-/* Card Grid Layout */
-.arcane-card-grid {
+/* 🩸 Health Bars */
+.health-bars {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 2rem;
+
+  .player-health,
+  .ai-health {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .heart-icon {
+      color: #ff4444;
+      font-size: 1.5rem;
+    }
+
+    .skull-icon {
+      color: #00ff99;
+      font-size: 1.5rem;
+    }
+
+    .health-bar {
+      width: 120px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+
+      .health-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #ff4444, #ff8888);
+        transition: width 0.5s ease-in-out;
+      }
+
+      .health-fill.ai {
+        background: linear-gradient(90deg, #00ff99, #66ffcc);
+      }
+    }
+
+    span {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
 }
 
-/* Card Styles */
-.arcane-card {
-  width: 120px;
-  height: 180px;
-  perspective: 1000px;
-  cursor: pointer;
-  position: relative;
-}
-
-.arcane-card-inner {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease-in-out;
-}
-
-/* Flip Effect */
-.arcane-card.flipped .arcane-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Card Faces */
-.arcane-card-front,
-.arcane-card-back {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  position: absolute;
-  backface-visibility: hidden;
+/* 🎴 Card Display */
+.card-area,
+.ai-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  width: 140px;
+  height: 180px;
+  background: linear-gradient(135deg, #222, #111);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
   font-weight: bold;
-  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+
+  &.attack {
+    border-color: #ff4444;
+    box-shadow: 0px 4px 15px rgba(255, 68, 68, 0.7);
+  }
+
+  &.defense {
+    border-color: #4488ff;
+    box-shadow: 0px 4px 15px rgba(68, 136, 255, 0.7);
+  }
+
+  &.heal {
+    border-color: #00ff99;
+    box-shadow: 0px 4px 15px rgba(0, 255, 153, 0.7);
+  }
+
+  &.hex {
+    border-color: #ff00ff;
+    box-shadow: 0px 4px 15px rgba(255, 0, 255, 0.7);
+  }
+
+  &.arcaneSurge {
+    border-color: #ffcc00;
+    box-shadow: 0px 4px 15px rgba(255, 204, 0, 0.7);
+  }
+
+  span {
+    font-size: 1.5rem;
+  }
 }
 
-/* Front of Card */
-.arcane-card-front {
+/* 💥 Damage Effects */
+.damage-effect {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: floatDamage 1s ease-in-out;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes floatDamage {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+.damage-effect.player {
+  color: #ff4444;
+}
+
+.damage-effect.ai {
+  color: #00ff99;
+}
+
+/* ❌ Game Over */
+.game-over {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  margin-top: 1rem;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .reset-button {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(135deg, #ff6666, #ff0000);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+/* 🃏 Flip Card Button */
+.flip-card-button {
   background: linear-gradient(135deg, #222, #111);
   border: 2px solid #00ffff;
-}
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  margin-top: 1rem;
 
-/* Back of Card */
-.arcane-card-back {
-  background: linear-gradient(135deg, #551a8b, #220044);
-  transform: rotateY(180deg);
-  border: 2px solid #ff00ff;
-  box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
-}
+  &:hover {
+    background: linear-gradient(135deg, #0099ff, #0066cc);
+    box-shadow: 0px 0px 25px rgba(0, 153, 255, 1);
+    transform: scale(1.05);
+  }
 
-/* Card Hover Effects */
-.arcane-card:hover {
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    background: #444;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
 }
