@@ -19,7 +19,7 @@ import {
 } from "@/features";
 import { WizardButton } from "@/features/hallOfCreations/WizardButton";
 import "@/styles/_spellbook.scss";
-export default function HallOfCreations() {
+export default function HallOfCreations()     {
   return (
     <div className="hall-container text-center">
       <h1 className="hall-title">The Hall of Creations</h1>
