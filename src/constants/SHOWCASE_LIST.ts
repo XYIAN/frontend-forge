@@ -1,4 +1,4 @@
-import { WizardButton } from "@/features";
+import WizardButton from "@/features/hallOfCreations/WizardButton";
 import { ShowcaseItem } from "@/types";
 
 export const SHOWCASE_LIST: ShowcaseItem[] = [

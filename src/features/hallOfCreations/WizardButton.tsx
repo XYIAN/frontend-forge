@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "@/styles/_wizardButton.scss";
 
-export const WizardButton = () => {
+export default function WizardButton() {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
@@ -34,4 +34,4 @@ export const WizardButton = () => {
       </motion.button>
     </motion.div>
   );
-};
+}
